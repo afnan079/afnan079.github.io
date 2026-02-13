@@ -11,3 +11,14 @@ header {
 nav ul {
     list-style-type: none;
 }
+
+/* --- SPECIFICITY CHALLENGE --- */
+p {
+    color: #555;
+}
+
+.bio-content {
+    color: #0000FF;
+}
+
+/* The .bio-content class selector (0-0-1-0) wins over the p tag selector (0-0-0-1) due to higher specificity. */
