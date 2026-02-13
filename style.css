@@ -12,7 +12,7 @@ nav ul {
     list-style-type: none;
 }
 
-/* --- SPECIFICITY CHALLENGE --- */
+/* SPECIFICITY CHALLENGE */
 p {
     color: #555;
 }
@@ -22,3 +22,8 @@ p {
 }
 
 /* The .bio-content class selector (0-0-1-0) wins over the p tag selector (0-0-0-1) due to higher specificity. */
+
+#profile-pic {
+    border-radius: 50%;
+    width: 150px;
+}
