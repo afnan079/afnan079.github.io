@@ -126,7 +126,7 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .main-header {
+  header {
     flex-direction: column;
     gap: 20px;
     text-align: center;
