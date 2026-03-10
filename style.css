@@ -17,22 +17,33 @@ h2 {
   margin-top: 30px;
 }
 
-#profile-pic {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto 10px;
-}
-
-header {
+.main-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 5%;
-  text-align: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
   margin-bottom: 30px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+#profile-pic {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0;
+}
+
+.logo-container h1 {
+  margin: 0;
+  border: none;
+  padding: 0;
 }
 
 nav ul {
@@ -40,23 +51,24 @@ nav ul {
   gap: 20px;
   list-style-type: none;
   padding: 0;
-  text-align: center;
+  margin: 0;
 }
 
 nav ul li {
   display: inline;
-  margin: 0 15px;
 }
 
 nav a {
   text-decoration: none;
   color: #0056b3;
+  padding: 8px 12px; /* Permanent padding prevents jitter */
+  border-radius: 4px;
+  transition: background-color 0.2s;
 }
 
 nav a:hover {
   text-decoration: underline;
   background-color: rgba(0, 86, 179, 0.1);
-  padding: 0.25rem 0.5rem;
 }
 
 .grid-container {
@@ -111,14 +123,19 @@ footer {
 }
 
 @media (max-width: 768px) {
-  header {
+  .main-header {
     flex-direction: column;
+    gap: 20px;
     text-align: center;
+  }
+  
+  .logo-container {
+    flex-direction: column;
   }
 
   nav ul {
     flex-direction: column;
-    align-items: center;
+    gap: 10px;
   }
 
   .grid-container {
