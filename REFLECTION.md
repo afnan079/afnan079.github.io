@@ -1,27 +1,17 @@
 # Reflection
 
-## Q1: HTTP Path (Browser to HTML)
+1. Explain the difference between flex-direction: row and flex-direction: column.
 
-When you enter a URL in the browser, the browser first asks DNS to resolve the domain name to an IP address. Once it has the IP, the browser sends an HTTP request to that server. The server receives the request and responds by sending back the HTML (and other resources). The browser then renders the HTML to display the page.
+flex-direction: row places items side-by-side horizontally, like words in a sentence (left to right). flex-direction: column stacks the items vertically one on top of the other, which is exactly what I used in my media query to make the navigation stack neatly on mobile screens.
 
-## Q2: Docker vs GitHub Pages
+2. Why is it important to use relative units (like %, vh, or rem) instead of fixed pixels (px) for
+responsive design?
 
-Docker is a platform that runs applications inside containerized environments—lightweight, isolated runtimes that bundle an app with its dependencies and a slice of the OS. GitHub Pages is a static site hosting service that serves pre-built files (HTML, CSS, JS) from a repository; it does not run containers or servers you control.
+Fixed pixels (px) are completely rigid. If I make a container 800px wide, it will stay 800px even on a tiny iPhone screen, which causes ugly horizontal scrolling. Relative units like %, vh, or rem scale dynamically based on the screen size or the root font size, so the layout automatically shrinks or grows to fit whatever device the user is holding.
 
-Docker containers are strictly required to run GitHub Pages.
+3. AI Attribution: List the prompt you used if you consulted GenAI. Identify one specific
+piece of CSS code the AI provided that you had to modify to make it work for your layout.
 
-## AI Attribution
+Prompt used: "How do I align my logo to the left and nav links to the right using flexbox?"
 
-Code generated partially by Cursor AI. Logic error regarding Docker usage was manually corrected.
-
-## Part 2 - Q1: Flexbox Direction
-
-`flex-direction: row` lays items out horizontally from left to right (in left-to-right languages), while `flex-direction: column` stacks items vertically from top to bottom.
-
-## Part 2 - Q2: Relative vs Fixed Units
-
-Relative units like `%`, `vh`, and `rem` scale fluidly based on screen size or the root font size, allowing layouts and text to adapt to different devices, while fixed `px` values stay rigid and can cause content to overflow or be clipped on smaller screens.
-
-## Part 2 - Q3: AI Attribution
-
-Prompt used: "How do I make a 3-column grid?" The AI suggested using `grid-template-columns: 33% 33% 33%;`, but I modified it to `repeat(3, 1fr)` because fractional units handle the grid-gap math much better without overflowing the container.
+CSS Modification: The AI generated the CSS for my navigation bar, but it put padding: 10px; specifically inside the nav a:hover rule. This was a bad piece of code because it made the links physically expand and shift the whole layout every time my mouse hovered over them. I had to manually modify the CSS by moving the padding to the base nav a rule, and then only change the background-color on hover so the transition was smooth without breaking the layout.
